@@ -1,16 +1,16 @@
-ограничение по времени на тест1 second
-ограничение по памяти на тест64 megabytes
-вводстандартный ввод
-выводстандартный вывод
-Задан неориентированный взвешенный граф, вершины которого пронумерованы от 1 до n. Ваша задача найти кратчайший путь из вершины 1 в вершину n.
+Time limit for test1 second
+Memory limit per test: 64 megabytes
+inputstandard input
+outputstandard output
+An undirected weighted graph is given, the vertices of which are numbered from 1 to n. Your task is to find the shortest path from vertex 1 to vertex n.
 
-Входные данные
-В первой строке содержатся целые числа n и m (2 ≤ n ≤ 105, 0 ≤ m ≤ 105), где n — количество вершин, а m — количество ребер в графе. Далее в m строках содержатся сами ребра, по одному в строке. Каждое ребро задается тремя числами ai, bi, wi (1 ≤ ai, bi ≤ n, 1 ≤ wi ≤ 106), где ai, bi — это концы ребра, а wi — его длина.
+Input data
+The first line contains integers n and m (2 ≤ n ≤ 105, 0 ≤ m ≤ 105), where n is the number of vertices and m is the number of edges in the graph. Next m lines contain the edges themselves, one per line. Each edge is specified by three numbers ai, bi, wi (1 ≤ ai, bi ≤ n, 1 ≤ wi ≤ 106), where ai, bi are the ends of the edge, and wi is its length.
 
-Граф может содержать кратные ребра и петли.
+The graph can contain multiple edges and loops.
 
-Выходные данные
-Выведите число -1 если пути нет или сам кратчайший путь, если он существует.
+Output
+Print the number -1 if there is no path or the shortest path itself if it exists.
 
 
 
