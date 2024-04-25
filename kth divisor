@@ -1,0 +1,60 @@
+Time limit for test 2 seconds
+Memory limit per test: 256 megabytes
+inputstandard input
+outputstandard output
+Two natural numbers n and k are given. Find the kth divisor of n in ascending order, or report that it does not exist.
+
+The divisor of n is any natural number that divides n without leaving a remainder.
+
+Input data
+The first line contains two integers n and k (1 ≤ n ≤ 1015, 1 ≤ k ≤ 109).
+
+Output
+If the number n has less than k divisors, print -1.
+
+Otherwise, print the kth divisor of n in ascending order.
+
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+const int INF = 1000000000;
+
+int main() {
+    int k;
+    long long n;
+    cin >> n;
+    cin >> k;
+    vector <long long> v;
+    for (int i = 1; i < (int)sqrt(n) + 1; i++) {
+        long long p, p2;
+        p = 1LL * (n % i);
+        p2 = 1LL * i * i;
+        if (p == 0 && p2 != n)
+        {
+            long long ans1, ans2;
+            ans1 = 1LL * i;
+            ans2 = 1LL * (n / i);
+             v.push_back(ans1);
+             v.push_back(ans2);
+        }
+        if (p == 0 && p2 == n){
+            long long ans1;
+            ans1 = 1LL * i;
+            v.push_back(ans1);
+        }
+
+    }
+    long long ans;
+
+
+    sort(v.begin(), v.end());
+    ans = 1LL * (v[k - 1]);
+    if ((int)v.size() < k)
+        cout << -1;
+    else
+        cout << ans;
+
+    return 0;
+}
