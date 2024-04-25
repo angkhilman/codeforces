@@ -1,0 +1,48 @@
+Time limit for test 1 second
+Memory limit per test: 256 megabytes
+inputstandard input
+outputstandard output
+Bran and his older sister Arya come from the same house. Bran loves candy very much, so Arya is going to give him some.
+
+Arya and Bran initially have 0 candies. On the i-th of the next n days, Arya will find ai candies in the box that the Many-Faced God will give her. Every day she can give Bran no more than 8 candies. If she doesn't give the candies that day, they stay with her and she can give them back later.
+
+Your task is to find the minimum number of days it will take Arya to give Bran k candies before the end of the nth day. Formally, you need to print the minimum number of the day by the end of which k candies will be issued (days are numbered from 1 to n).
+
+Print -1 if it is impossible to give k candies in the given n days.
+
+Input data
+The first line contains 2 integers n and k (1 ≤ n ≤ 100, 1 ≤ k ≤ 10000).
+
+The second line contains n integers a1, a2, a3, ..., an (1 ≤ ai ≤ 100).
+
+Output
+If Arya cannot give Bran k candies in n days, print -1.
+
+Otherwise, print one integer — the minimum number of days it will take Arya to give Bran k candies before the end of the nth day.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+const int maxn = 1e2 + 17;
+
+
+int main(){
+    int n, k, a = 0, ans = 0, v, q;
+	cin >> n;
+	cin >> k;
+	while(n--){
+		cin >> v;
+		a += v;
+		q = min(8, a);
+		a -= q;
+		k -= q;
+		ans++;
+		if(k <= 0)
+			break;
+	}
+	if(k > 0)
+		cout << -1;
+	else
+		cout << ans;
+	return 0;
+}
